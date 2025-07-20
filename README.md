@@ -70,7 +70,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 ------------
 ### Explicación del código 
 
-***Clase RestaurantInventorySystem***
+"""Clase RestaurantInventorySystem"""
 
 -----------
 
@@ -78,7 +78,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 -----------
 
-***Clase InventoryAPI***
+"""Clase InventoryAPI"""
 
 
 
