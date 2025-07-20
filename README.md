@@ -3,8 +3,11 @@
 ### ## Presentación
 
 **Curso:** Programación Orientada a Objetos 
+
 **Grupo:** PythUNAL
+
 **Docente:**Felipe Gonzales  Roldan
+
 **Integrantes:**Jhonyer Camilo Padilla Enríquez, Andres Camilo, Diego 
 
 ### ¿De qué trata este proyectoh
