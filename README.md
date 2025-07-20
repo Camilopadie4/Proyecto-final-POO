@@ -3,13 +3,15 @@
 ------------
 
 
+### Presentación
 
-### ## Presentación
+**Curso:** Programación Orientada a Objetos
 
-**Curso:**Programación Orientada a Objetos 
 **Grupo:** PythUNAL
-**Docente:**Felipe Gonzales  Roldan
-**Integrantes:**Jhonyer Camilo Padilla Enríquez, Andres Camilo, Diego 
+
+**Docente:** Felipe Gonzales  Roldan
+
+**Integrantes:** Jhonyer Camilo Padilla Enríquez, Andres Camilo, Diego 
 
 ------------
 
