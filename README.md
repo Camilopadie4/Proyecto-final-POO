@@ -19,7 +19,7 @@
 
 ### ¿De qué trata este proyectoh
 
-Es un programa que implementa un sistema de inventario para gestionar un resturante o cualquier negocio pequeño de comida(heladería, cafetería , pizzría, etc.)desarrollado en Python con interfaz gráfica basada en Tkinter y persistencia de datos en SQLite
+<p>Es un programa que implementa un sistema de inventario para gestionar un resturante o cualquier negocio pequeño de comida(heladería, cafetería , pizzría, etc.)desarrollado en Python con interfaz gráfica basada en Tkinter y persistencia de datos en SQLite
 
 ------------
 
@@ -27,7 +27,7 @@ Es un programa que implementa un sistema de inventario para gestionar un restura
 
 ### Objetivo
 
- facilitar la administración eficiente de productos almacenados o en bodega, permitiendo llevar un control detallado del stock disponible, el estado de los productos, sus fechas de vencimiento, y otras variables clave para una operación organizada y segura.
+<p>Facilitar la administración eficiente de productos almacenados o en bodega, permitiendo llevar un control detallado del stock disponible, el estado de los productos, sus fechas de vencimiento, y otras variables clave para una operación organizada y segura.
 
 ------------
 
@@ -71,6 +71,8 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 ### Explicación del código 
 
 **Clase RestaurantInventorySystem**
+
+<p>Esta clase representa el corazón del sistema. Inicializa la base de datos local y crea la interfaz gráfica con `Tkinter`, incluyendo campos, botones y una tabla (`Treeview`) para visualizar el inventario. Si la base está vacía, carga datos de ejemplo.
 
 -----------
 
