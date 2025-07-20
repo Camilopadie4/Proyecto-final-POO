@@ -68,6 +68,9 @@ Es un programa que implementa un sistema de inventario para gestionar un restura
 Para el desarrollo del programa, fueron útile herramientas y librerías disponibles en Python. 
 
 ------------
+### Explicación del código 
+
+## Clase RestaurantInventorySystem
 
 
 
