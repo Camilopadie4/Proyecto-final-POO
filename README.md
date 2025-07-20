@@ -32,12 +32,19 @@ Es un programa que implementa un sistema de inventario para gestionar un restura
 
 
 ### Características 
+
 •  Autenticación de usuarios con roles (admin / user).
+
 •  Carga, edición y eliminación de productos con validaciones.
+
 •  Actualización de stock y control de inventario en tiempo real.
+
 •  Alertas automáticas para productos en estado crítico(con stock mínimo fuera de límite).
+
 •  Filtrado y búsqueda inteligente de ítems.
+
 •  Generación de reportes con estadísticas, categorías y detalle completo del inventario.
+
 •  Acceso programático (API interna) para operaciones automatizadas sobre el inventario.
 
 ------------
