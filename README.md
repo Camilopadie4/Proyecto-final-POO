@@ -1,6 +1,6 @@
 # Sistema de inventario para un restaurante
 
-------------
+
 
 
 ### Presentación
