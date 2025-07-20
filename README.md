@@ -70,15 +70,15 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 ------------
 ### Explicación del código 
 
-"""Clase RestaurantInventorySystem"""
+**Clase RestaurantInventorySystem**
 
 -----------
 
-"""Clase LoginSystem"""
+**Clase LoginSystem**
 
 -----------
 
-"""Clase InventoryAPI"""
+***Clase InventoryAPI**
 
 
 
