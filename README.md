@@ -72,5 +72,13 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ***Clase RestaurantInventorySystem***
 
+-----------
+
+***Clase LoginSystem***
+
+-----------
+
+***Clase InventoryAPI***
+
 
 
