@@ -65,37 +65,49 @@
 
 ### Lógica general del sistema
 
-1. **Autenticación de Usuario**
+1. **Inicio del sistema**
 
-- Se inicia con la ventana de login (LoginSystem).
+- Se ejecuta la función main().
 
-- El usuario debe ingresar su nombre y contraseña.
+- Se lanza el sistema de login (LoginSystem), donde el usuario debe autenticarse.
 
-- El sistema verifica los datos en la base de datos usuarios_restaurante.db.
+2. **Autenticación**
 
-- Si es válido, se muestra la ventana principal del sistema con su rol (admin o user).
+- Si el usuario y contraseña son válidos (verificados contra la base de datos usuarios_restaurante.db), se carga el sistema principal.
 
-2. **Gestión del Inventario (RestaurantInventorySystem)** 
-   
-- Una vez autenticado, el usuario puede:
+- Si falla, se muestra un mensaje de error y se cancela el acceso.
 
-- Visualizar el inventario completo (en un Treeview).
+- Acceso al sistema de inventario (RestaurantInventorySystem)
 
-- Agregar, editar o eliminar productos del inventario.
+- Se abre la ventana principal del inventario con el nombre del usuario autenticado.
 
-- Filtrar productos por nombre o categoría.
+- Se carga la base de datos inventario_restaurante.db.
 
-- Registrar entradas o salidas de productos (actualización de stock).
+- Se construye la interfaz completa (listado, botones, filtros, campos de entrada, reportes).
 
-- Ver alertas automáticas:
+3. **Gestión del inventario**
 
-- Productos con stock bajo.
+El usuario puede:
 
-- Productos próximos a vencer.
+_ Agregar, editar o eliminar productos.
 
-- Generar y guardar reportes detallados del inventario.
+_ Actualizar el stock disponible.
 
-- Cerrar sesión al terminar.
+_ Filtrar productos por nombre o categoría.
+
+_ Ver alertas por productos con stock bajo o por vencer.
+
+_ Generar reportes completos.
+
+_ Acciones de backend con InventoryAPI
+
+_ Las operaciones internas (como calcular el valor total del inventario, reducir stock, etc.) son realizadas por InventoryAPI, que actúa como una capa lógica de acceso a datos.
+
+4. **Cierre**
+
+- Al salir, las conexiones a la base de datos se cierran correctamente.
+
+- El sistema queda listo para una nueva sesión.
 
 ### Casos de uso clave 
 
