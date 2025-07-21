@@ -23,12 +23,26 @@
 
 
 
-### Objetivo
+### Objetivo general
 
 <p>El objetivo principal del programa es facilitar la administración eficiente de productos almacenados o en bodega, permitiendo llevar un control detallado del stock disponible, el estado de los productos, sus fechas de vencimiento, y otras variables clave para una operación organizada y segura.
 
 ### Justificación 
-<p> Decidimos crear este programa con el ánimo de crear una herramienta útil y sencilla para manejar inventarios de bodegas pequeñas. Notamos que muchos negocios manejan su inventario a mano, lo que genera desorden, desperdicio y pérdidas, por ello, con este proyecto vimos la oportunidad de automatizar esos procesos y hacerlos más eficientes.   
+<p> Decidimos crear este programa con el ánimo de crear una herramienta útil y sencilla para manejar inventarios de bodegas pequeñas. Notamos que muchos negocios manejan su inventario a mano, lo que genera desorden, desperdicio y pérdidas, por ello, con este proyecto vimos la oportunidad de automatizar esos procesos y hacerlos más eficientes.  
+
+### Objetivos específicos
+
+- Implementar una interfaz gráfica intuitiva utilizando Tkinter, que facilite la interacción del usuario con las funcionalidades del sistema.
+
+- Diseñar un módulo de autenticación de usuarios que controle el acceso al sistema mediante credenciales y roles (administrador y usuario).
+
+- Crear mecanismos de alerta automática para identificar productos con stock crítico o próximos a vencerse.
+
+- Generar reportes detallados del inventario que incluyan estadísticas clave y se puedan guardar en archivos para su consulta posterior.
+
+- Aplicar principios de Programación Orientada a Objetos y estructuras modulares para asegurar la mantenibilidad, escalabilidad y reutilización del código.
+
+- Permitir la integración futura con otros sistemas, mediante la creación de una API interna que facilite automatizaciones o comunicación externa.
 
 
 ------------
