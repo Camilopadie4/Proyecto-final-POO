@@ -17,6 +17,8 @@
 
 <p>Es un programa que implementa un sistema de inventario para gestionar un resturante o cualquier negocio pequeño de comida(heladería, cafetería , pizzría, etc.)desarrollado en Python con interfaz gráfica basada en Tkinter y persistencia de datos en SQLite.
 
+<p>También incluye una API interna que facilita automatizaciones o futuras integraciones con otras aplicaciones, como sistemas POS o plataformas en línea.
+
 ------------
 
 
