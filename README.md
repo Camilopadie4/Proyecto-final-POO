@@ -146,11 +146,6 @@
 ------------
 
 
-### Estructura de Módulos y paquetes
-
-------------
-
-
 ### Tecnologías utilizadas 
 
 Para el desarrollo del programa, fueron útile herramientas y librerías disponibles en Python. 
@@ -174,7 +169,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ## Explicación de métodos atributos del programa
 
-### main() – Función de Entrada
+### `main()` – Función de Entrada
 <p>Esta función orquesta el flujo del programa:
 
 - Llama al login.
