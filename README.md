@@ -82,12 +82,42 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 #### Clase RestaurantInventorySystem
 Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
-#### Atributo principal
-_ def __init__(self, root): 
+#### Atributos 
+_ def __init__(self, root) -> Atributo principal 
+
 **root** El constructor recibe root, que es la ventana principal de Tkinter (tk.Tk()).
 
+_ conn: conexión a la base de datos de usuarios usuarios_restaurante.db.
+
+_ cursor: cursor para ejecutar sentencias SQL.
+
+_ username_var: variable de texto vinculada al campo de usuario.
+
+_ password_var: variable de texto vinculada al campo de contraseña.
+
+_ login_successful: indica si el login fue exitoso (True o False).
+
 #### Métodos 
-- 
+_ __init__()  -> Constructor. Inicializa ventana, conecta a la BD, y crea la interfaz.
+
+_ center_window() -> Centra la ventana de login en la pantalla.
+
+_ init_user_database() -> Crea la tabla usuarios si no existe. Agrega dos usuarios por defecto:
+
+_ admin (admin123) -> user (user123)
+
+_ hash_password(password: str) -> Convierte la contraseña a un hash SHA-256. Evita guardar contraseñas en texto plano.
+
+_ create_login_interface() Diseña visualmente la interfaz de login usando tkinter con estilos personalizados.
+
+_ login() -> Verifica si el usuario y la contraseña ingresados coinciden con los registros de la base de datos.
+
+_ run() -> Inicia el mainloop() de Tkinter y espera el intento de login. Retorna True si fue exitoso.
+
+_ get_user_info() -> Devuelve la información del usuario autenticado (id, nombre, rol).
+
+__del__() -> Cierra la conexión a la base de datos cuando se destruye el objeto.
+
 
 #### Clase InventoryAPI
 Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
