@@ -63,6 +63,57 @@
 
 ------------
 
+### Lógica general del sistema
+
+1. **Autenticación de Usuario**
+
+- Se inicia con la ventana de login (LoginSystem).
+
+- El usuario debe ingresar su nombre y contraseña.
+
+- El sistema verifica los datos en la base de datos usuarios_restaurante.db.
+
+- Si es válido, se muestra la ventana principal del sistema con su rol (admin o user).
+
+2. **Gestión del Inventario (RestaurantInventorySystem)** 
+   
+- Una vez autenticado, el usuario puede:
+
+- Visualizar el inventario completo (en un Treeview).
+
+- Agregar, editar o eliminar productos del inventario.
+
+- Filtrar productos por nombre o categoría.
+
+- Registrar entradas o salidas de productos (actualización de stock).
+
+- Ver alertas automáticas:
+
+- Productos con stock bajo.
+
+- Productos próximos a vencer.
+
+- Generar y guardar reportes detallados del inventario.
+
+- Cerrar sesión al terminar.
+
+### Casos de uso clave 
+
+| Nº | Caso de Uso                | Actor                | Descripción                                                                       |
+| -- | -------------------------- | -------------------- | --------------------------------------------------------------------------------- |
+| 1  | Iniciar sesión             | Usuario (admin/user) | El usuario se autentica con nombre y contraseña.                                  |
+| 2  | Ver inventario             | Usuario              | Consulta todos los productos existentes en el inventario.                         |
+| 3  | Agregar producto           | Admin                | Registra un nuevo producto con datos como cantidad, unidad, precio y vencimiento. |
+| 4  | Editar producto            | Admin                | Modifica los datos de un producto existente.                                      |
+| 5  | Eliminar producto          | Admin                | Borra un producto del inventario.                                                 |
+| 6  | Registrar entrada o salida | Usuario/Admin        | Aumenta o disminuye el stock de un producto según el tipo de movimiento.          |
+| 7  | Ver alertas                | Usuario/Admin        | Consulta productos con stock crítico o próximos a vencer.                         |
+| 8  | Generar reporte            | Usuario/Admin        | Crea un reporte detallado del inventario y lo guarda como `.txt`.                 |
+| 9  | Filtrar productos          | Usuario/Admin        | Busca productos por nombre o categoría.                                           |
+
+
+------------
+
 
 ### Estructura de Módulos y paquetes
 
@@ -206,6 +257,8 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 - **get_user_info()**: Devuelve la información del usuario autenticado (id, nombre, rol).
 
 - **__del__():** Cierra la conexión a la base de datos cuando se destruye el objeto.
+
+
 
 
 
