@@ -75,7 +75,8 @@
 ###  Diagrama UML del sistema
 
 
-<img width="3786" height="3849" alt="Mermaid Chart - Create complex, visual diagrams with text  A smarter way of creating diagrams -2025-07-21-135957" src="https://github.com/user-attachments/assets/47fc9957-ba37-4756-b172-8f08d842c6de" />
+<img width="3786" height="3849" alt="Mermaid Chart - Create complex, visual diagrams with text  A smarter way of creating diagrams -2025-07-21-135957" src="https://github.com/user-attachments/assets/a712a837-4e88-4661-bd74-73b189e5b1eb" /> 
+
 
 
 
@@ -83,13 +84,12 @@
 
 ### Estructura general del sistema 
 
-El sistema está compuesto por 3 clases principales:
+El sistema está compuesto por 2 clases principales. 
 
 | Clase                       | Rol                                      | Interacción                        |
 | --------------------------- | ---------------------------------------- | ---------------------------------- |
 | `LoginSystem`               | Maneja el login y la autenticación       | Interfaz gráfica de ingreso        |
 | `RestaurantInventorySystem` | Control de inventario (interfaz gráfica) | CRUD, alertas, reportes            |
-| `InventoryAPI`              | Lógica de datos con SQLite               | Métodos programáticos sin interfaz |
 
 
 ------------
@@ -114,15 +114,7 @@ El sistema está compuesto por 3 clases principales:
         | Ver/Agregar/Editar/Borrar   |
         | Reportes y alertas          |
         +-----------------------------+
-                         ↑
-                         |
-        +-----------------------------+
-        |        InventoryAPI         |
-        |-----------------------------|
-        | Manejo del inventario vía   |
-        | código (agregar, reducir,   |
-        | consultar, reportar)        |
-        +-----------------------------+
+       
 
 
 1. **Inicio del sistema**
@@ -274,49 +266,6 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 | `reporte_inventario(self)`                   | Genera el contenido del reporte del inventario como un texto largo, estructurado y completo.                                                  |
 | `reporte_en_txt(self, content)`              | Guarda el contenido del reporte en un archivo `.txt` en el equipo del usuario.                                                                |
 | `__del__(self)`                              | Destructor. Cierra la conexión con la base de datos al eliminar la instancia para liberar recursos.                                           |
-
-
-
-
-
-
-### Clase InventoryAPI
-
-<p>Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc). No tiene interfaz. 
-
-**Funcionalidades:**
-
-- Agregar productos a la base de datos.
-
-- Actualizar el stock de un producto.
-
-- Reducir el stock (por ejemplo, al usar ingredientes).
-
-- Consultar todos los datos de un producto.
-
-- Obtener una lista de productos con stock bajo.
-
-- Calcular el valor total del inventario.
-
-#### Atributos
-
-- **`conn`**: conexión a la base de datos del inventario.
-
-- **`cursor`**: cursor para ejecutar consultas SQL.
-
-#### Métodos 
-
-| Método                                          | Descripción                                                          |
-| ----------------------------------------------- | -------------------------------------------------------------------- |
-| `__init__(db_path='inventario_restaurante.db')` | Inicializa la conexión con la base de datos.                         |
-| `agregar_producto(...)`                         | Inserta un nuevo producto en la base de datos.                       |
-| `actualizar_stock(nombre, nueva_cantidad)`      | Actualiza la cantidad de stock de un producto.                       |
-| `reducir_stock(nombre, cantidad_usar)`          | Disminuye el stock tras usar producto. Valida existencia suficiente. |
-| `obtener_producto(nombre)`                      | Devuelve todos los datos del producto especificado.                  |
-| `listar_productos_bajo_stock()`                 | Lista productos con cantidad ≤ stock mínimo.                         |
-| `valor_total_inventario()`                      | Calcula el valor total de todos los productos (cantidad × precio).   |
-| `close()`                                       | Cierra la conexión a la base de datos.                               |
-
 
 
 
