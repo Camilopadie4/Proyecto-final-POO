@@ -1,4 +1,4 @@
-# Sistema de inventario para un restaurante
+<img width="592" height="339" alt="Captura de pantalla 2025-07-20 200519" src="https://github.com/user-attachments/assets/598e40fe-99cb-42cd-a0c2-cceb056735af" /># Sistema de inventario para un restaurante
 
 
 
@@ -70,77 +70,112 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ------------
 
-### Explicación del código 
+### Explicación del código
 
-### Funcionalidades principales
+#### Clase LoginSystem
+Clase principal del sistema de inventario. Maneja toda la lógica y la interfaz de gestión de productos.
 
-<img width="1083" height="422" alt="Captura de pantalla 2025-07-20 184901" src="https://github.com/user-attachments/assets/454c6808-f23c-4e3e-abd3-d05009ccc99e" /> 
+#### Clase RestaurantInventorySystem
+Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
-**Función:**  Es el punto de entrada del sistema. Primero solicita autenticación con LoginSystem. Si las credenciales son válidas, lanza la GUI del inventario.
+#### Clase InventoryAPI
+Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
-**Interfaz gráfica del login** 
+### main() – Función de Entrada
 
-<img width="487" height="294" alt="Captura de pantalla 2025-07-20 185412" src="https://github.com/user-attachments/assets/1c2b6ea9-1eed-4144-9a9c-ce8c7646d659" />  
+Esta función orquesta el flujo del programa:
 
-**Función:** Este fragmento asegura que la tabla de usuarios exista. Además, crea usuarios por defecto (admin y user) con contraseñas hasheadas.
+2. Llama al login.
 
-**Interfaz gráfica del inventario**
+3. Si es exitoso, carga la ventana de inventario.
 
-<img width="629" height="68" alt="Captura de pantalla 2025-07-20 185844" src="https://github.com/user-attachments/assets/89625a12-8e29-47da-b4e1-f6efa085e28a" /> 
+4. Si no, termina el programa.
 
-**Función:** Permite visualizar alertas en tiempo real para controlar el inventario. Es una funcionalidad crítica de gestión.
-
-
-**Generación de reportes**
-
-<img width="314" height="55" alt="image" src="https://github.com/user-attachments/assets/ce27f430-95e1-44ca-b954-94baacb613b7" />
-
-**Función:** Este método genera un reporte listo para ser guardado o impreso, mostrando una radiografía completa del estado del inventario.
-
-**Función auxiliar** 
-
-<img width="453" height="80" alt="Captura de pantalla 2025-07-20 190608" src="https://github.com/user-attachments/assets/251509ed-43c5-42e8-a7cb-7447cfc1e99c" />
-
-**Función:** Función usada para proteger contraseñas. Se aplica al registrar o verificar un usuario.
+<img width="1087" height="455" alt="Captura de pantalla 2025-07-20 203715" src="https://github.com/user-attachments/assets/c08c3244-1540-4a4b-9266-b030c508eca6" />
 
 
+---------
 
-**Clase LoginSystem**
+### Métodos clave de cada clase 
 
+#### LoginSystem
 
-**Función:** Gestiona el proceso de autenticación de usuarios usando SHA-256 para validar contraseñas. Si las credenciales son correctas, guarda los datos del usuario y cierra la ventana del login.
+<img width="205" height="46" alt="Captura de pantalla 2025-07-20 194307" src="https://github.com/user-attachments/assets/e590711c-04c9-455c-81b8-57e1d874f96b" />
 
------------
-
-**Clase RestaurantInventorySystem**
-
-
-        
-**Función:** Obtiene todos los productos desde SQLite y los muestra en la tabla principal de la interfaz gráfica. También determina el estado del stock (normal, bajo o crítico).
-        
-**Detección del estado del stock**
+**Función:**  Inicializa la ventana, configura estilo, base de datos y crea la interfaz gráfica.
 
 
-        
-**Función:** Determina el estado del producto para generar alertas visuales. Cuando la cantidad está por debajo del mínimo o es igual, el estado es crítico. 
+<img width="242" height="36" alt="Captura de pantalla 2025-07-20 194346" src="https://github.com/user-attachments/assets/be164605-a89f-49af-b9c8-0ab5e93d6a1b" />
 
-**Generación de reportes**
+**Función:** Crea y gestiona la base de datos de usuarios. Incluye usuarios por defecto.
 
-
-    
-**Función:** Genera un reporte detallado del inventario, que incluye estadísticas generales, productos críticos, y una tabla con todos los productos.
-
------------
-
-**Clase InventoryAPI**
+<img width="634" height="398" alt="Captura de pantalla 2025-07-20 200459" src="https://github.com/user-attachments/assets/c0bfe444-56f9-4805-b8bc-21800c7d9533" />  
 
 
-    
-**Función:** Permite agregar productos desde otras interfaces o scripts usando esta API en lugar de la interfaz gráfica. Facilita integraciones externas.
+<img width="592" height="339" alt="Captura de pantalla 2025-07-20 200519" src="https://github.com/user-attachments/assets/3bfa8128-bbb2-40ce-b00a-79eb3c3e0313" />
+      
 
-**Función principal "main"**
+**Función:** Verifica credenciales. Usa SHA-256 para comparar contraseñas.
 
-# FUNCIÓN PRINCIPAL QUE INICIA EL SISTEMA
+
+<img width="421" height="192" alt="Captura de pantalla 2025-07-20 194627" src="https://github.com/user-attachments/assets/817d29f6-54c3-42f3-a7cf-d279231c4bc0" />
+
+**Función:** Retorna info del usuario autenticado para usarla en otras clases
+
+
+
+#### RestaurantInventorySystem
+
+<img width="269" height="36" alt="Captura de pantalla 2025-07-20 192446" src="https://github.com/user-attachments/assets/43a70fc3-0779-44c1-96bc-d545343f9209" />
+
+**Función:** Inicia la interfaz principal, base de datos e inventario.
+
+<img width="577" height="283" alt="Captura de pantalla 2025-07-20 194827" src="https://github.com/user-attachments/assets/5c5cdb8b-115f-4f92-8aaf-56c3607b8b9a" />
+
+**Función:** Carga los datos desde la base de datos y los muestra en pantalla.
+
+<img width="267" height="72" alt="Captura de pantalla 2025-07-20 194953" src="https://github.com/user-attachments/assets/6a4f4a96-620c-44d8-aaf8-473a08783283" />
+
+<img width="662" height="300" alt="Captura de pantalla 2025-07-20 195001" src="https://github.com/user-attachments/assets/c9d7cc58-4a15-4514-988a-135e7e334823" />
+
+<img width="691" height="318" alt="Captura de pantalla 2025-07-20 195013" src="https://github.com/user-attachments/assets/7ba75805-fa8c-410d-8f68-327df92ed9d6" />
+
+**Función:** CRUD completo. Usan formularios Tkinter para registrar/modificar productos.
+
+<img width="392" height="129" alt="image" src="https://github.com/user-attachments/assets/22a43249-c74f-44f1-8c81-428b8c29c71e" />
+
+**Función:** Muestra productos con bajo stock o por vencer.
+
+<img width="314" height="55" alt="Captura de pantalla 2025-07-20 190325" src="https://github.com/user-attachments/assets/0b65fe35-6ee7-43f9-a15f-d5a723c68720" />
+
+**Función:** Genera reporte con resumen, categorías y valores.
+
+
+#### InventoryAPI
+
+<img width="267" height="72" alt="Captura de pantalla 2025-07-20 194953" src="https://github.com/user-attachments/assets/1161f3b9-343e-40e8-8784-97e9ee87d67d" />
+
+**Función:** Inserta un nuevo producto en la BD.
+
+<img width="610" height="290" alt="Captura de pantalla 2025-07-20 195541" src="https://github.com/user-attachments/assets/8ca0ecbe-23a6-41c4-a70e-b6014635e6b4" />
+
+**Función:** Cambia el valor del stock actual.
+
+<img width="434" height="51" alt="image" src="https://github.com/user-attachments/assets/1f7711f7-c790-4528-b550-82893a01fe4d" />
+
+**Función:** Disminuye el stock cuando un producto se consume. Incluye validaciones.
+
+<img width="354" height="58" alt="Captura de pantalla 2025-07-20 203420" src="https://github.com/user-attachments/assets/014ff616-10d2-402c-b7ce-1a3502a45210" />
+
+**Función:** Devuelve lista de productos críticos.
+
+
+
+
+
+
+
+
 
 
 
