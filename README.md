@@ -70,6 +70,10 @@
 Para el desarrollo del programa, fueron útile herramientas y librerías disponibles en Python. 
 
 
+<img width="650" height="360" alt="Captura de pantalla 2025-07-20 165330" src="https://github.com/user-attachments/assets/83f12f36-8d51-4672-adec-b387071d4781" />
+
+
+
 ------------
 
 ### Explicación del código
