@@ -103,39 +103,39 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Métodos 
 
-**__init__(root):** Inicializa todo: conecta a BD, crea interfaz, carga inventario.
+- **__init__(root):** Inicializa todo: conecta a BD, crea interfaz, carga inventario.
 
-**setup_db():** Crea la tabla inventario si no existe.
+- **setup_db():** Crea la tabla inventario si no existe.
 
-**create_ui():** Diseña visualmente la interfaz de gestión del inventario.
+- **create_ui():** Diseña visualmente la interfaz de gestión del inventario.
 
-**load_inventory():** Carga los productos existentes desde la base de datos y los muestra en la tabla principal.
+- **load_inventory():** Carga los productos existentes desde la base de datos y los muestra en la tabla principal.
 
-**filter_items():** Filtra productos por texto ingresado (por nombre o categoría).
+- **filter_items():** Filtra productos por texto ingresado (por nombre o categoría).
 
-**add_product()**: Abre un formulario para añadir un producto nuevo.
+- **add_product()**: Abre un formulario para añadir un producto nuevo.
 
-**edit_product():** Abre un formulario para modificar un producto seleccionado.
+- **edit_product():** Abre un formulario para modificar un producto seleccionado.
 
-**delete_product():** Elimina un producto seleccionado de la base de datos.
+- **delete_product():** Elimina un producto seleccionado de la base de datos.
 
-**product_dialog(data):** Crea un formulario reutilizable para agregar o editar productos.
+- **product_dialog(data):** Crea un formulario reutilizable para agregar o editar productos.
 
-**update_stock():** Permite actualizar la cantidad de un producto desde la interfaz.
+- **update_stock():** Permite actualizar la cantidad de un producto desde la interfaz.
 
-**get_stock_status(cantidad, stock_minimo):** Retorna el estado del stock: “Suficiente”, “Bajo” o “Crítico”.
+- **get_stock_status(cantidad, stock_minimo):** Retorna el estado del stock: “Suficiente”, “Bajo” o “Crítico”.
 
-**update_stats():** Actualiza los valores estadísticos: número total, valor total, productos críticos.
+- **update_stats():** Actualiza los valores estadísticos: número total, valor total, productos críticos.
 
-**show_alerts():** Muestra pestañas con productos de stock bajo y con fechas de vencimiento cercanas.
+- **show_alerts():** Muestra pestañas con productos de stock bajo y con fechas de vencimiento cercanas.
 
-**generate_report():** Muestra una ventana con un informe detallado del inventario (resumen, categorías, productos críticos, tabla general).
+- **generate_report():** Muestra una ventana con un informe detallado del inventario (resumen, categorías, productos críticos, tabla general).
 
-**generate_report_content()**: Crea el texto del reporte, consultando la base de datos.
+- **generate_report_content()**: Crea el texto del reporte, consultando la base de datos.
 
-**save_report(content):** Guarda el reporte generado como archivo .txt.
+- **save_report(content):** Guarda el reporte generado como archivo .txt.
 
-**__del__():** Cierra conexión a base de datos al destruir el objeto.
+- **__del__():** Cierra conexión a base de datos al destruir el objeto.
 
 
 ### Clase InventoryAPI
@@ -144,64 +144,64 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Atributos
 
-**conn:** conexión a la base de datos del inventario.
+- **conn:** conexión a la base de datos del inventario.
 
-**cursor:** cursor para ejecutar consultas SQL.
+- **cursor:** cursor para ejecutar consultas SQL.
 
 #### Métodos 
 
-**__init__(db_path):** Conecta con la base de datos.
+- **__init__(db_path):** Conecta con la base de datos.
 
-**agregar_producto(...):** Inserta un nuevo producto en la base de datos.
+- **agregar_producto(...):** Inserta un nuevo producto en la base de datos.
 
-**actualizar_stock(nombre, nueva_cantidad):** Cambia la cantidad actual de un producto por una nueva.
+- **actualizar_stock(nombre, nueva_cantidad):** Cambia la cantidad actual de un producto por una nueva.
 
-**reducir_stock(nombre, cantidad_usar):** Disminuye la cantidad de un producto al ser utilizado. Valida que haya suficiente stock.
+- **reducir_stock(nombre, cantidad_usar):** Disminuye la cantidad de un producto al ser utilizado. Valida que haya suficiente stock.
 
-**obtener_producto(nombre):** Devuelve todos los datos de un producto específico.
+- **obtener_producto(nombre):** Devuelve todos los datos de un producto específico.
 
-**listar_productos_bajo_stock():** Lista todos los productos cuya cantidad es menor o igual al stock mínimo.
+- **listar_productos_bajo_stock():** Lista todos los productos cuya cantidad es menor o igual al stock mínimo.
 
-**valor_total_inventario():** Calcula el valor total del inventario (precio unitario × cantidad por producto).
+- **valor_total_inventario():** Calcula el valor total del inventario (precio unitario × cantidad por producto).
 
-**close():** Cierra la conexión a la base de datos.
+- **close():** Cierra la conexión a la base de datos.
 
 ### LoginSystem
 
 #### Atributos
 
-**root:** ventana principal Tkinter del login.
+- **root:** ventana principal Tkinter del login.
 
-**conn:** conexión a la base de datos de usuarios usuarios_restaurante.db.
+- **conn:** conexión a la base de datos de usuarios usuarios_restaurante.db.
 
-**cursor:** cursor para ejecutar sentencias SQL.
+- **cursor:** cursor para ejecutar sentencias SQL.
 
-**username_var:** variable de texto vinculada al campo de usuario.
+- **username_var:** variable de texto vinculada al campo de usuario.
 
-**password_var:** variable de texto vinculada al campo de contraseña.
+- **password_var:** variable de texto vinculada al campo de contraseña.
 
-**login_successful:** indica si el login fue exitoso (True o False).
+- **login_successful:** indica si el login fue exitoso (True o False).
 
 
 #### Métodos
 
-**__init__():** Constructor. Inicializa ventana, conecta a la BD, y crea la interfaz.
+- **__init__():** Constructor. Inicializa ventana, conecta a la BD, y crea la interfaz.
 
-**center_window():** Centra la ventana de login en la pantalla.
+- **center_window():** Centra la ventana de login en la pantalla.
 
-**init_user_database():** Crea la tabla usuarios si no existe. Agrega dos usuarios por defecto: admin (admin123) y user(user123).
+- **init_user_database():** Crea la tabla usuarios si no existe. Agrega dos usuarios por defecto: admin (admin123) y user(user123).
 
-**hash_password(password: str):** Convierte la contraseña a un hash SHA-256. Evita guardar contraseñas en texto plano.
+- **hash_password(password: str):** Convierte la contraseña a un hash SHA-256. Evita guardar contraseñas en texto plano.
 
-**create_login_interface()**: Diseña visualmente la interfaz de login usando tkinter con estilos personalizados.
+- **create_login_interface()**: Diseña visualmente la interfaz de login usando tkinter con estilos personalizados.
 
-**login():** Verifica si el usuario y la contraseña ingresados coinciden con los registros de la base de datos.
+- **login():** Verifica si el usuario y la contraseña ingresados coinciden con los registros de la base de datos.
 
-**run()**: Inicia el mainloop() de Tkinter y espera el intento de login. Retorna True si fue exitoso.
+- **run()**: Inicia el mainloop() de Tkinter y espera el intento de login. Retorna True si fue exitoso.
 
-**get_user_info()**: Devuelve la información del usuario autenticado (id, nombre, rol).
+- **get_user_info()**: Devuelve la información del usuario autenticado (id, nombre, rol).
 
-**__del__():** Cierra la conexión a la base de datos cuando se destruye el objeto.
+- **__del__():** Cierra la conexión a la base de datos cuando se destruye el objeto.
 
 
 
