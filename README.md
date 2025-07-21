@@ -131,6 +131,9 @@ El sistema está compuesto por 3 clases principales:
     
 - Se lanza el sistema de login (LoginSystem), donde el usuario debe autenticarse.
 
+  ![istockphoto-1373745245-612x612](https://github.com/user-attachments/assets/a5cea77f-4eda-4454-834b-d1f745907308)
+
+
 2. **Autenticación**
 
 - Si el usuario y contraseña son válidos (verificados contra la base de datos usuarios_restaurante.db), se carga el sistema principal.
@@ -162,6 +165,11 @@ El sistema está compuesto por 3 clases principales:
 - Acciones de backend con InventoryAPI
 
 - Las operaciones internas (como calcular el valor total del inventario, reducir stock, etc.) son realizadas por InventoryAPI, que actúa como una capa lógica de acceso a datos.
+- 
+
+<img width="1047" height="342" alt="Captura de pantalla 2025-07-21 095346" src="https://github.com/user-attachments/assets/f6936484-e3d1-407d-9c7c-2eaed2d79728" />
+
+  
 
 4. **Cierre**
 
@@ -216,10 +224,6 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 - Si es exitoso, carga la ventana de inventario.
 
 - Si no, termina el programa.
-
-<img width="404" height="341" alt="Captura de pantalla 2025-07-21 001849" src="https://github.com/user-attachments/assets/cedc9163-9fc6-40a7-982d-3fee2732d583" />
-
-<p> Cuando se ejecuta con éxito, se despliega una ventana así 
 
 
 
