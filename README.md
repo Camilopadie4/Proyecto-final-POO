@@ -334,7 +334,7 @@ El flujo de todo el sistema es sencillo pero efectivo:
 
 - Se puede generar un reporte completo con un clic.
 
-- Todo se guarda en una base de datos SQLite para persistencia.”
+- Todo se guarda en una base de datos SQLite para persistencia.
 
 
 
