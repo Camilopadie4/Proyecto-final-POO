@@ -103,9 +103,9 @@
 | -- | -------------------------- | -------------------- | --------------------------------------------------------------------------------- |
 | 1  | Iniciar sesión             | Usuario (admin/user) | El usuario se autentica con nombre y contraseña.                                  |
 | 2  | Ver inventario             | Usuario              | Consulta todos los productos existentes en el inventario.                         |
-| 3  | Agregar producto           | Admin                | Registra un nuevo producto con datos como cantidad, unidad, precio y vencimiento. |
-| 4  | Editar producto            | Admin                | Modifica los datos de un producto existente.                                      |
-| 5  | Eliminar producto          | Admin                | Borra un producto del inventario.                                                 |
+| 3  | Agregar producto           | Admin/usuario        | Registra un nuevo producto con datos como cantidad, unidad, precio y vencimiento. |
+| 4  | Editar producto            | Admin/us             | Modifica los datos de un producto existente.                                      |
+| 5  | Eliminar producto          | Admin/us             | Borra un producto del inventario.                                                 |
 | 6  | Registrar entrada o salida | Usuario/Admin        | Aumenta o disminuye el stock de un producto según el tipo de movimiento.          |
 | 7  | Ver alertas                | Usuario/Admin        | Consulta productos con stock crítico o próximos a vencer.                         |
 | 8  | Generar reporte            | Usuario/Admin        | Crea un reporte detallado del inventario y lo guarda como `.txt`.                 |
