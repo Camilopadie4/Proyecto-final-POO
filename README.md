@@ -388,7 +388,7 @@ El flujo de todo el sistema es sencillo pero efectivo:
 
 - Puede realizar operaciones como agregar productos, editar, eliminar, filtrar.
 
-- El sistema detecta automáticamente alertas de stock y vencimientos.
+- El sistema detecta automáticamente alertas de stock y vencimientos.  
 
 - Se puede generar un reporte completo con un clic.
 
