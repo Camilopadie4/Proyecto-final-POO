@@ -94,6 +94,35 @@ El sistema está compuesto por 3 clases principales:
 
 ### Lógica general del sistema
 
+#### Flujo completo
+
+               +--------------------+
+               |   LoginSystem      |
+               |--------------------|
+               | Interfaz de login  |
+               | Valida credenciales|
+               +---------+----------+
+                         |
+              Si login exitoso
+                         ↓
+        +-----------------------------+
+        | RestaurantInventorySystem   |
+        |-----------------------------|
+        | Interfaz de inventario      |
+        | Ver/Agregar/Editar/Borrar   |
+        | Reportes y alertas          |
+        +-----------------------------+
+                         ↑
+                         |
+        +-----------------------------+
+        |        InventoryAPI         |
+        |-----------------------------|
+        | Manejo del inventario vía   |
+        | código (agregar, reducir,   |
+        | consultar, reportar)        |
+        +-----------------------------+
+
+
 1. **Inicio del sistema**
 
 - Se ejecuta la función main().
