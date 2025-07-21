@@ -378,7 +378,7 @@ Gestiona el acceso al sistema. Tiene usuarios por defecto (admin y user) y prote
 ---------
 ### Conclusión 
 
-El flujo de todo el sistema es sencillo pero potente:
+El flujo de todo el sistema es sencillo pero efectivo:
 
 - El usuario se autentica en el login.
 
