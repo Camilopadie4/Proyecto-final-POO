@@ -83,63 +83,155 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
 #### Atributos 
-_ def __init__(self, root) -> Atributo principal 
+root: ventana principal Tkinter del inventario.
 
-**root** El constructor recibe root, que es la ventana principal de Tkinter (tk.Tk()).
+conn: conexión a la base de datos inventario_restaurante.db.
 
-_ conn: conexión a la base de datos de usuarios usuarios_restaurante.db.
+cursor: cursor para ejecutar SQL.
 
-_ cursor: cursor para ejecutar sentencias SQL.
-
-_ username_var: variable de texto vinculada al campo de usuario.
-
-_ password_var: variable de texto vinculada al campo de contraseña.
-
-_ login_successful: indica si el login fue exitoso (True o False).
 
 #### Métodos 
-_ __init__()  -> Constructor. Inicializa ventana, conecta a la BD, y crea la interfaz.
 
-_ center_window() -> Centra la ventana de login en la pantalla.
+__init__(root)
+Inicializa todo: conecta a BD, crea interfaz, carga inventario.
 
-_ init_user_database() -> Crea la tabla usuarios si no existe. Agrega dos usuarios por defecto:
+setup_db()
+Crea la tabla inventario si no existe.
 
-_ admin (admin123) -> user (user123)
+create_ui()
+Diseña visualmente la interfaz de gestión del inventario.
 
-_ hash_password(password: str) -> Convierte la contraseña a un hash SHA-256. Evita guardar contraseñas en texto plano.
+load_inventory()
+Carga los productos existentes desde la base de datos y los muestra en la tabla principal.
 
-_ create_login_interface() Diseña visualmente la interfaz de login usando tkinter con estilos personalizados.
+filter_items()
+Filtra productos por texto ingresado (por nombre o categoría).
 
-_ login() -> Verifica si el usuario y la contraseña ingresados coinciden con los registros de la base de datos.
+add_product()
+Abre un formulario para añadir un producto nuevo.
 
-_ run() -> Inicia el mainloop() de Tkinter y espera el intento de login. Retorna True si fue exitoso.
+edit_product()
+Abre un formulario para modificar un producto seleccionado.
 
-_ get_user_info() -> Devuelve la información del usuario autenticado (id, nombre, rol).
+delete_product()
+Elimina un producto seleccionado de la base de datos.
 
-__del__() -> Cierra la conexión a la base de datos cuando se destruye el objeto.
+product_dialog(data)
+Crea un formulario reutilizable para agregar o editar productos.
+
+update_stock()
+Permite actualizar la cantidad de un producto desde la interfaz.
+
+get_stock_status(cantidad, stock_minimo)
+Retorna el estado del stock: “Suficiente”, “Bajo” o “Crítico”.
+
+update_stats()
+Actualiza los valores estadísticos: número total, valor total, productos críticos.
+
+show_alerts()
+Muestra pestañas con productos de stock bajo y con fechas de vencimiento cercanas.
+
+generate_report()
+Muestra una ventana con un informe detallado del inventario (resumen, categorías, productos críticos, tabla general).
+
+generate_report_content()
+Crea el texto del reporte, consultando la base de datos.
+
+save_report(content)
+Guarda el reporte generado como archivo .txt.
+
+__del__()
+Cierra conexión a base de datos al destruir el objeto.
 
 
 #### Clase InventoryAPI
 Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
+
 #### Atributos
+
+conn: conexión a la base de datos del inventario.
+
+cursor: cursor para ejecutar consultas SQL.
+
 #### Métodos 
 
-### main() – Función de Entrada
+__init__(db_path)
+Conecta con la base de datos.
 
-Esta función orquesta el flujo del programa:
+agregar_producto(...)
+Inserta un nuevo producto en la base de datos.
 
-2. Llama al login.
+actualizar_stock(nombre, nueva_cantidad)
+Cambia la cantidad actual de un producto por una nueva.
 
-3. Si es exitoso, carga la ventana de inventario.
+reducir_stock(nombre, cantidad_usar)
+Disminuye la cantidad de un producto al ser utilizado.
+Valida que haya suficiente stock.
 
-4. Si no, termina el programa.
+obtener_producto(nombre)
+Devuelve todos los datos de un producto específico.
 
+listar_productos_bajo_stock()
+Lista todos los productos cuya cantidad es menor o igual al stock mínimo.
 
+valor_total_inventario()
+Calcula el valor total del inventario (precio unitario × cantidad por producto).
 
----------
-
+close()
+Cierra la conexión a la base de datos.
 
 #### LoginSystem
+
+#### Atributos
+
+root: ventana principal Tkinter del login.
+
+conn: conexión a la base de datos de usuarios usuarios_restaurante.db.
+
+cursor: cursor para ejecutar sentencias SQL.
+
+username_var: variable de texto vinculada al campo de usuario.
+
+password_var: variable de texto vinculada al campo de contraseña.
+
+login_successful: indica si el login fue exitoso (True o False).
+
+
+#### Métodos
+
+__init__()
+Constructor. Inicializa ventana, conecta a la BD, y crea la interfaz.
+
+center_window()
+Centra la ventana de login en la pantalla.
+
+init_user_database()
+Crea la tabla usuarios si no existe. Agrega dos usuarios por defecto:
+
+admin (admin123)
+
+user (user123)
+
+hash_password(password: str)
+Convierte la contraseña a un hash SHA-256. Evita guardar contraseñas en texto plano.
+
+create_login_interface()
+Diseña visualmente la interfaz de login usando tkinter con estilos personalizados.
+
+login()
+Verifica si el usuario y la contraseña ingresados coinciden con los registros de la base de datos.
+
+run()
+Inicia el mainloop() de Tkinter y espera el intento de login. Retorna True si fue exitoso.
+
+get_user_info()
+Devuelve la información del usuario autenticado (id, nombre, rol).
+
+__del__()
+Cierra la conexión a la base de datos cuando se destruye el objeto.
+
+
+
 
 
 
