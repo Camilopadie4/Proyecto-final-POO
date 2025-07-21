@@ -194,7 +194,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Atributos 
 
-- **`root`**: ventana principal Tkinter del inventario.
+- **`__init__`**: Constructor que establece conexión con la base de datos SQLite del inventario. Acepta como parámetro opcional la ruta al archivo .db.
 
 - **`conn`**: conexión a la base de datos `inventario_restaurante.db`.
 
