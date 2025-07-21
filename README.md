@@ -197,6 +197,18 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 ### Clase RestaurantInventorySystem
 <p>Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
+**Funcionalidad:**
+
+- Interfaz gráfica.
+
+- CRUD completo: agregar, editar, eliminar productos.
+
+- Búsqueda y filtrado.
+
+- Alertas de stock y vencimientos.
+
+- Reportes descargables.
+
 #### Atributos 
 
 - **`root`**: Constructor que Inicializa la interfaz principal, conecta a la base de datos y carga los productos existentes.
@@ -241,7 +253,21 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ### Clase InventoryAPI
 
-<p>Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
+<p>Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc). No tiene interfaz. 
+
+**Funcionalidades:**
+
+- Agregar productos a la base de datos.
+
+- Actualizar el stock de un producto.
+
+- Reducir el stock (por ejemplo, al usar ingredientes).
+
+- Consultar todos los datos de un producto.
+
+- Obtener una lista de productos con stock bajo.
+
+- Calcular el valor total del inventario.
 
 #### Atributos
 
@@ -266,6 +292,24 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 
 ### LoginSystem
+
+Gestiona el acceso al sistema. Tiene usuarios por defecto (admin y user) y protege las credenciales con hash SHA256
+
+**Funcionalidades**
+
+- Muestra una ventana gráfica de login con campos de usuario y contraseña.
+
+- Conecta con una base de datos SQLite llamada usuarios_restaurante.db.
+
+- Crea automáticamente dos usuarios si no existen:
+
+- admin / admin123
+
+- user / user123
+
+- Protege las contraseñas usando hash SHA256.
+
+- Si el login es exitoso, cierra la ventana y da acceso al inventario.
 
 #### Atributos
 
@@ -297,9 +341,22 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 | `get_user_info()`          | Devuelve la información del usuario autenticado como un diccionario (`id`, `username`, `role`).                                                        |
 | `__del__()`                | Método destructor: cierra la conexión con la base de datos al finalizar el programa para liberar recursos.                                             |
 
+---------
+### Conclusión 
 
+El flujo de todo el sistema es sencillo pero potente:
 
+- El usuario se autentica en el login.
 
+- Accede a la interfaz principal.
+
+- Puede realizar operaciones como agregar productos, editar, eliminar, filtrar.
+
+- El sistema detecta automáticamente alertas de stock y vencimientos.
+
+- Se puede generar un reporte completo con un clic.
+
+- Todo se guarda en una base de datos SQLite para persistencia.”
 
 
 
