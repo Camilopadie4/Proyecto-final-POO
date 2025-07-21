@@ -91,7 +91,6 @@ Esta función orquesta el flujo del programa:
 
 4. Si no, termina el programa.
 
-<img width="1087" height="455" alt="Captura de pantalla 2025-07-20 203715" src="https://github.com/user-attachments/assets/c08c3244-1540-4a4b-9266-b030c508eca6" />
 
 
 ---------
