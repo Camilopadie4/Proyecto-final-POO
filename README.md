@@ -103,7 +103,7 @@ El sistema está compuesto por 3 clases principales:
                | Valida credenciales|
                +---------+----------+
                          |
-              Si login exitoso
+              Si login es exitoso
                          ↓
         +-----------------------------+
         | RestaurantInventorySystem   |
