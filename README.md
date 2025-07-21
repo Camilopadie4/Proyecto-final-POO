@@ -264,6 +264,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 | `get_user_info()` | Devuelve los datos del usuario que ha iniciado sesión, como su nombre y rol (admin o user).       |
 
 
+### Pruebas 
 
 
 
