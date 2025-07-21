@@ -127,6 +127,11 @@ El sistema está compuesto por 3 clases principales:
 
 - Se ejecuta la función main().
 
+  def main():
+    from login import LoginSystem
+    from interfaz import RestaurantInventorySystem
+
+    
 - Se lanza el sistema de login (LoginSystem), donde el usuario debe autenticarse.
 
 2. **Autenticación**
