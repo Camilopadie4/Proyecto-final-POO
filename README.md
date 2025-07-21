@@ -88,7 +88,7 @@ Clase auxiliar que permite manipular el inventario de forma programática, útil
 
 **conn:** conexión a la base de datos inventario_restaurante.db.
 
-**cursor:** cursor para ejecutar SQL.
+**cursor:** cursor para ejecutar SQL.  
 
 
 #### Métodos 
