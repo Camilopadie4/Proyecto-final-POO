@@ -153,7 +153,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ------------
 
-## Explicación de métodos y atributos
+## Explicación de métodos y atributos importantes
 
 ### main() – Función de Entrada
 <p>Esta función orquesta el flujo del programa:
