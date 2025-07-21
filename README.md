@@ -128,11 +128,6 @@ El sistema está compuesto por 3 clases principales:
 1. **Inicio del sistema**
 
 - Se ejecuta la función main().
-  
-
-<img width="620" height="388" alt="Captura de pantalla 2025-07-21 075743" src="https://github.com/user-attachments/assets/4c04de99-d371-48c9-8b15-4f6af7becfd2" />
-
-
     
 - Se lanza el sistema de login (LoginSystem), donde el usuario debe autenticarse.
 
