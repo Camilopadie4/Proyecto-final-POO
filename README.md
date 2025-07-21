@@ -87,21 +87,21 @@
 
 3. **Gestión del inventario**
 
-El usuario puede:
+<p> El usuario puede:
 
-_ Agregar, editar o eliminar productos.
+- Agregar, editar o eliminar productos.
 
-_ Actualizar el stock disponible.
+- Actualizar el stock disponible.
 
-_ Filtrar productos por nombre o categoría.
+- Filtrar productos por nombre o categoría.
 
-_ Ver alertas por productos con stock bajo o por vencer.
+- Ver alertas por productos con stock bajo o por vencer.
 
-_ Generar reportes completos.
+- Generar reportes completos.
 
-_ Acciones de backend con InventoryAPI
+- Acciones de backend con InventoryAPI
 
-_ Las operaciones internas (como calcular el valor total del inventario, reducir stock, etc.) son realizadas por InventoryAPI, que actúa como una capa lógica de acceso a datos.
+- Las operaciones internas (como calcular el valor total del inventario, reducir stock, etc.) son realizadas por InventoryAPI, que actúa como una capa lógica de acceso a datos.
 
 4. **Cierre**
 
