@@ -198,9 +198,9 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Atributos
 
-- `conn:´ conexión a la base de datos del inventario.
+- **`conn`**: conexión a la base de datos del inventario.
 
-- `cursor:´ cursor para ejecutar consultas SQL.
+- **`cursor`**: cursor para ejecutar consultas SQL.
 
 #### Métodos 
 
@@ -218,17 +218,17 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Atributos
 
-- **root:** ventana principal Tkinter del login.
+- **`root`**: ventana principal Tkinter del login.
 
-- **conn:** conexión a la base de datos de usuarios usuarios_restaurante.db.
+- **`conn`**: conexión a la base de datos de usuarios `usuarios_restaurante.db`.
 
-- **cursor:** cursor para ejecutar sentencias SQL.
+- **`cursor`**: cursor para ejecutar sentencias SQL.
 
-- **username_var:** variable de texto vinculada al campo de usuario.
+- **`username_var`**: variable de texto vinculada al campo de usuario.
 
-- **password_var:** variable de texto vinculada al campo de contraseña.
+- **`password_var`**: variable de texto vinculada al campo de contraseña.
 
-- **login_successful:** indica si el login fue exitoso (True o False).
+- **`login_successful`**: indica si el login fue exitoso (`True` o `False`).
 
 
 #### Métodos
