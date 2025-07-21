@@ -803,33 +803,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-# FUNCIÓN PRINCIPAL MODIFICADA
-# def main():
-#     """Función principal que ejecuta primero el login y luego el inventario"""
-    
-#     # 1. EJECUTAR SISTEMA DE LOGIN
-#     login_system = LoginSystem()
-#     login_success = login_system.run()
-    
-#     # 2. SI EL LOGIN ES EXITOSO, ABRIR INVENTARIO
-#     if login_success:
-#         user_info = login_system.get_user_info()
-        
-#         # Crear nueva ventana raíz para el inventario
-#         inventory_root = tk.Tk()
-#         inventory_root.mainloop()
-#         if __name__ == "__main__":
-#             root = tk.Tk()
-#             app = RestaurantInventorySystem(root)
-#             root.mainloop()
-#     else:
-#         print("Acceso denegado - Login cancelado")
-
-# if __name__ == "__main__":
-#             main()
