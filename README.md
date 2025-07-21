@@ -79,14 +79,20 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 ### Explicación del código
 
 
-    
-Clase principal del sistema de inventario. Maneja toda la lógica y la interfaz de gestión de productos.
-
 #### Clase RestaurantInventorySystem
 Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
+#### Atributo principal
+_ def __init__(self, root): 
+**root** El constructor recibe root, que es la ventana principal de Tkinter (tk.Tk()).
+
+#### Métodos 
+- 
+
 #### Clase InventoryAPI
 Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
+#### Atributos
+#### Métodos 
 
 ### main() – Función de Entrada
 
@@ -102,76 +108,15 @@ Esta función orquesta el flujo del programa:
 
 ---------
 
-### Métodos clave de cada clase 
 
 #### LoginSystem
 
 
 
-**Función:**  Inicializa la ventana, configura estilo, base de datos y crea la interfaz gráfica.
 
 
 
 
-**Función:** Crea y gestiona la base de datos de usuarios. Incluye usuarios por defecto.
-
-
-
-
-
-      
-
-**Función:** Verifica credenciales. Usa SHA-256 para comparar contraseñas.
-
-
-
-
-**Función:** Retorna info del usuario autenticado para usarla en otras clases
-
-
-
-#### RestaurantInventorySystem
-
-
-
-**Función:** Inicia la interfaz principal, base de datos e inventario.
-
->
-
-**Función:** Carga los datos desde la base de datos y los muestra en pantalla.
-
-
-
-
-
-**Función:** CRUD completo. Usan formularios Tkinter para registrar/modificar productos.
-
-
-
-**Función:** Muestra productos con bajo stock o por vencer.
-
-
-
-**Función:** Genera reporte con resumen, categorías y valores.
-
-
-#### InventoryAPI
-
-
-
-**Función:** Inserta un nuevo producto en la BD.
-
-
-
-**Función:** Cambia el valor del stock actual.
-
-
-
-**Función:** Disminuye el stock cuando un producto se consume. Incluye validaciones.
-
-<
-
-**Función:** Devuelve lista de productos críticos.
 
 
 
