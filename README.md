@@ -13,7 +13,7 @@
 ------------
 
 
-### ¿De qué trata este proyectoh
+### ¿De qué trata este proyecto?
 
 <p>Es un programa que implementa un sistema de inventario para gestionar un resturante o cualquier negocio pequeño de comida(heladería, cafetería , pizzría, etc.)desarrollado en Python con interfaz gráfica basada en Tkinter y persistencia de datos en SQLite.
 
@@ -125,7 +125,17 @@
 Para el desarrollo del programa, fueron útile herramientas y librerías disponibles en Python. 
 
 
-<img width="650" height="360" alt="Captura de pantalla 2025-07-20 165330" src="https://github.com/user-attachments/assets/83f12f36-8d51-4672-adec-b387071d4781" />
+| **Librería**       | **Uso** |
+|--------------------|---------|
+| `tkinter`          | Para construir la interfaz gráfica del sistema (ventanas, botones, etiquetas, campos, etc.). |
+| `ttk (Themed Tkinter)` | Para utilizar widgets estilizados como `Treeview`, `Notebook`, `Combobox` y `Frame`. |
+| `sqlite3`          | Para la gestión de la base de datos SQLite, que almacena usuarios, productos e inventario. |
+| `datetime`         | Para registrar fechas y horas, generar reportes con marcas de tiempo y verificar vencimientos. |
+| `timedelta`        | Para calcular diferencias entre fechas (por ejemplo, productos que vencen en 7 días). |
+| `hashlib`          | Para encriptar las contraseñas de los usuarios utilizando el algoritmo SHA-256. |
+| `messagebox`       | Para mostrar mensajes emergentes al usuario (alertas, errores, confirmaciones, etc.). |
+| `simpledialog`     | Para pedir datos sencillos al usuario mediante ventanas emergentes (como actualizar stock). |
+
 
 
 
