@@ -269,7 +269,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 
 
-### LoginSystem
+### `Clase LoginSystem`
 
 Gestiona el acceso al sistema. Tiene usuarios por defecto (admin y user) y protege las credenciales con hash SHA256
 
