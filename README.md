@@ -203,15 +203,26 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Métodos 
 
-| Método              | Explicación                                                                                      |
-| ------------------- | ------------------------------------------------------------------------------------------------ |
-| `__init__(root)`    | Inicializa la ventana, conecta a la base de datos y carga el inventario.                         |
-| `create_ui()`       | Construye toda la interfaz gráfica del inventario (botones, tablas, campos de búsqueda).         |
-| `add_product()`     | Abre un formulario emergente para ingresar un nuevo producto al inventario.                      |
-| `edit_product()`    | Permite editar los datos de un producto existente.                                               |
-| `update_stock()`    | Permite al usuario actualizar rápidamente la cantidad disponible de un producto.                 |
-| `show_alerts()`     | Muestra productos con vencimiento cercano o stock crítico, ayudando al control del inventario.   |
-| `generate_report()` | Genera un reporte textual del estado del inventario (resumen, productos críticos, estadísticas). |
+| Método                                     | Descripción                                                          |
+| ------------------------------------------ | -------------------------------------------------------------------- |
+| `__init__(root: Tk)`                       | Inicializa la base de datos, interfaz y carga datos.                 |
+| `setup_db()`                               | Crea la tabla del inventario si no existe.                           |
+| `create_ui()`                              | Construye la interfaz gráfica (botones, entradas, tablas).           |
+| `load_inventory()`                         | Carga los productos de la base de datos y los muestra.               |
+| `filter_items()`                           | Filtra productos por nombre o categoría.                             |
+| `add_product()`                            | Abre formulario para agregar un nuevo producto.                      |
+| `edit_product()`                           | Abre formulario para editar un producto existente.                   |
+| `delete_product()`                         | Elimina un producto seleccionado.                                    |
+| `product_dialog(data)`                     | Crea un formulario para agregar/editar productos.                    |
+| `update_stock()`                           | Permite actualizar la cantidad de un producto.                       |
+| `get_stock_status(cantidad, stock_minimo)` | Retorna “Suficiente”, “Bajo” o “Crítico”.                            |
+| `update_stats()`                           | Actualiza métricas de inventario (valor total, número de productos). |
+| `show_alerts()`                            | Muestra productos con vencimiento cercano o bajo stock.              |
+| `generate_report()`                        | Abre ventana con reporte detallado del inventario.                   |
+| `generate_report_content()`                | Genera el contenido textual del reporte.                             |
+| `save_report(content)`                     | Guarda el reporte como archivo `.txt`.                               |
+| `__del__()`                                | Cierra la conexión a la base de datos.                               |
+
 
 
 
@@ -227,13 +238,17 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Métodos 
 
-| Método                                     | Explicación                                                                           |
-| ------------------------------------------ | ------------------------------------------------------------------------------------- |
-| `agregar_producto(...)`                    | Inserta un nuevo producto en la base de datos, validando los datos.                   |
-| `actualizar_stock(nombre, nueva_cantidad)` | Cambia la cantidad actual de un producto directamente.                                |
-| `reducir_stock(nombre, cantidad_usar)`     | Resta unidades del inventario asegurando que no quede en negativo.                    |
-| `listar_productos_bajo_stock()`            | Devuelve productos que están por debajo de su nivel mínimo. Muy útil para alertas.    |
-| `valor_total_inventario()`                 | Calcula cuánto vale el inventario total en dinero, considerando cantidades y precios. |
+| Método                                          | Descripción                                                          |
+| ----------------------------------------------- | -------------------------------------------------------------------- |
+| `__init__(db_path='inventario_restaurante.db')` | Inicializa la conexión con la base de datos.                         |
+| `agregar_producto(...)`                         | Inserta un nuevo producto en la base de datos.                       |
+| `actualizar_stock(nombre, nueva_cantidad)`      | Actualiza la cantidad de stock de un producto.                       |
+| `reducir_stock(nombre, cantidad_usar)`          | Disminuye el stock tras usar producto. Valida existencia suficiente. |
+| `obtener_producto(nombre)`                      | Devuelve todos los datos del producto especificado.                  |
+| `listar_productos_bajo_stock()`                 | Lista productos con cantidad ≤ stock mínimo.                         |
+| `valor_total_inventario()`                      | Calcula el valor total de todos los productos (cantidad × precio).   |
+| `close()`                                       | Cierra la conexión a la base de datos.                               |
+
 
 
 
@@ -256,15 +271,18 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Métodos
 
-| Método            | Explicación                                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------------- |
-| `__init__()`      | Crea la ventana de login y configura la base de datos de usuarios.                                |
-| `login()`         | Valida que el usuario y la contraseña coincidan con la base de datos. Usa hashing para seguridad. |
-| `run()`           | Ejecuta la ventana de login hasta que el usuario se autentique o cancele.                         |
-| `get_user_info()` | Devuelve los datos del usuario que ha iniciado sesión, como su nombre y rol (admin o user).       |
+| Método                         | Descripción                                                                            |
+| ------------------------------ | -------------------------------------------------------------------------------------- |
+| `__init__()`                   | Constructor. Inicializa ventana, base de datos e interfaz de login.                    |
+| `center_window()`              | Centra la ventana en la pantalla.                                                      |
+| `init_user_database()`         | Crea la tabla de usuarios si no existe. Agrega usuarios por defecto (`admin`, `user`). |
+| `hash_password(password: str)` | Devuelve el hash SHA-256 de la contraseña.                                             |
+| `create_login_interface()`     | Construye la interfaz visual del login con campos y botones.                           |
+| `login()`                      | Valida credenciales ingresadas contra la base de datos.                                |
+| `run()`                        | Ejecuta el bucle principal de Tkinter y retorna `True` si el login fue exitoso.        |
+| `get_user_info()`              | Retorna un diccionario con el `id`, `username` y `role` del usuario autenticado.       |
+| `__del__()`                    | Cierra la conexión a la base de datos al destruir el objeto.                           |
 
-
-### Pruebas 
 
 
 
