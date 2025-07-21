@@ -68,8 +68,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ### Explicación del código
 
-class LoginSystem:
-    def __init__(self): 
+
     
 Clase principal del sistema de inventario. Maneja toda la lógica y la interfaz de gestión de productos.
 
