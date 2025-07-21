@@ -8,7 +8,7 @@
 
 **Docente:** Felipe Gonzales  Roldan
 
-**Integrantes:** Jhonyer Camilo Padilla Enríquez, Andres Camilo, Diego 
+**Integrantes:** Jhonyer Camilo Padilla Enríquez, Andres Camilo, Diego   
 
 ------------
 
