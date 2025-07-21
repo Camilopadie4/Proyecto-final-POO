@@ -171,11 +171,11 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Atributos 
 
-- `root:´ ventana principal Tkinter del inventario.   `` 
+- **`root`**: ventana principal Tkinter del inventario.
 
-- `conn:´ conexión a la base de datos inventario_restaurante.db.
+- **`conn`**: conexión a la base de datos `inventario_restaurante.db`.
 
-- `cursor:´ cursor para ejecutar SQL.  
+- **`cursor`**: cursor para ejecutar sentencias SQL.
 
 
 #### Métodos 
