@@ -185,7 +185,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 <img width="404" height="341" alt="Captura de pantalla 2025-07-21 001849" src="https://github.com/user-attachments/assets/cedc9163-9fc6-40a7-982d-3fee2732d583" />
 
-<p> Cuando se ejecuta con éxito
+<p> Cuando se ejecuta con éxito, se despliega una ventana así 
 
 
 
