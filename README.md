@@ -75,7 +75,7 @@
 ###  Diagrama UML del sistema
 
 
-<img width="3786" height="3849" alt="Mermaid Chart - Create complex, visual diagrams with text  A smarter way of creating diagrams -2025-07-21-135957" src="https://github.com/user-attachments/assets/a712a837-4e88-4661-bd74-73b189e5b1eb" /> 
+<img width="1531" height="3843" alt="Mermaid Chart - Create complex, visual diagrams with text  A smarter way of creating diagrams -2025-07-21-171604" src="https://github.com/user-attachments/assets/6bba459e-9271-4b97-bafd-8788442a3f87" /> 
 
 
 
