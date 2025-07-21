@@ -586,123 +586,6 @@ class RestaurantInventorySystem:
         if hasattr(self, 'conn'): #verifica si tiene conexion aun con la base de datos sqlite
             self.conn.close()
 
-class InventoryAPI:
-    def __init__(self, db_path='inventario_restaurante.db'):
-        self.conn = sqlite3.connect(db_path)
-        self.cursor = self.conn.cursor()
-    
-    def agregar_producto(self, nombre, categoria, cantidad, unidad, precio_unitario, 
-                        stock_minimo, fecha_vencimiento=None, proveedor=None):
-        """Agregar producto al inventario"""
-        try:
-            self.cursor.execute('''
-                INSERT INTO inventario (nombre, categoria, cantidad, unidad, precio_unitario, 
-                                      stock_minimo, fecha_vencimiento, proveedor)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (nombre, categoria, cantidad, unidad, precio_unitario, 
-                  stock_minimo, fecha_vencimiento, proveedor))
-            self.conn.commit()
-            return True, "Producto agregado exitosamente"
-        except Exception as e:
-            return False, str(e)
-    
-    def actualizar_stock(self, nombre, nueva_cantidad):
-        """Actualizar stock de un producto"""
-        try:
-            self.cursor.execute('''
-                UPDATE inventario SET cantidad = ? WHERE nombre = ?
-            ''', (nueva_cantidad, nombre))
-            
-            if self.cursor.rowcount > 0:
-                self.conn.commit()
-                return True, f"Stock de {nombre} actualizado a {nueva_cantidad}"
-            else:
-                return False, f"Producto {nombre} no encontrado"
-        except Exception as e:
-            return False, str(e)
-    
-    def reducir_stock(self, nombre, cantidad_usar):
-        """Reducir stock cuando se usa un producto"""
-        try:
-            # Obtener stock actual
-            self.cursor.execute('SELECT cantidad FROM inventario WHERE nombre = ?', (nombre,))
-            result = self.cursor.fetchone()
-            
-            if not result:
-                return False, f"Producto {nombre} no encontrado"
-            
-            stock_actual = result[0]
-            
-            if stock_actual < cantidad_usar:
-                return False, f"Stock insuficiente. Disponible: {stock_actual}, Solicitado: {cantidad_usar}"
-            
-            nuevo_stock = stock_actual - cantidad_usar
-            self.cursor.execute('UPDATE inventario SET cantidad = ? WHERE nombre = ?', 
-                              (nuevo_stock, nombre))
-            self.conn.commit()
-            
-            return True, f"Stock reducido. Nuevo stock de {nombre}: {nuevo_stock}"
-            
-        except Exception as e:
-            return False, str(e)
-    
-    def obtener_producto(self, nombre):
-        """Obtener información de un producto"""
-        try:
-            self.cursor.execute('''
-                SELECT * FROM inventario WHERE nombre = ?
-            ''', (nombre,))
-            
-            result = self.cursor.fetchone()
-            if result:
-                columns = ['id', 'nombre', 'categoria', 'cantidad', 'unidad', 
-                          'precio_unitario', 'stock_minimo', 'fecha_vencimiento', 
-                          'proveedor', 'fecha_actualizacion']
-                return True, dict(zip(columns, result))
-            else:
-                return False, f"Producto {nombre} no encontrado"
-                
-        except Exception as e:
-            return False, str(e)
-    
-    def listar_productos_bajo_stock(self):
-        """Obtener productos con stock bajo"""
-        try:
-            self.cursor.execute('''
-                SELECT nombre, cantidad, stock_minimo, unidad
-                FROM inventario 
-                WHERE cantidad <= stock_minimo
-                ORDER BY (cantidad - stock_minimo)
-            ''')
-            
-            productos = []
-            for row in self.cursor.fetchall():
-                productos.append({
-                    'nombre': row[0],
-                    'cantidad': row[1],
-                    'stock_minimo': row[2],
-                    'unidad': row[3],
-                    'diferencia': row[1] - row[2]
-                })
-            
-            return True, productos
-            
-        except Exception as e:
-            return False, str(e)
-    
-    def valor_total_inventario(self):
-        """Calcular valor total del inventario"""
-        try:
-            self.cursor.execute('SELECT SUM(cantidad * precio_unitario) FROM inventario')
-            valor = self.cursor.fetchone()[0] or 0
-            return True, valor
-        except Exception as e:
-            return False, str(e)
-    
-    def close(self):
-        """Cerrar conexión"""
-        self.conn.close()
-
 
 class LoginSystem:
     def __init__(self):
@@ -900,6 +783,32 @@ class LoginSystem:
             self.conn.close()
 
 
+def main():
+    """Función principal que ejecuta primero el login y luego el inventario"""
+    
+    # 1. EJECUTAR SISTEMA DE LOGIN
+    login_system = LoginSystem()
+    login_success = login_system.run()
+    
+    # 2. SI EL LOGIN ES EXITOSO, ABRIR INVENTARIO
+    if login_success:
+        user_info = login_system.get_user_info()
+        
+        # Crear ventana para el sistema de inventario
+        root = tk.Tk()
+        app = RestaurantInventorySystem(root)
+        root.mainloop()
+    else:
+        print("Acceso denegado - Login cancelado")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
 # FUNCIÓN PRINCIPAL MODIFICADA
 # def main():
 #     """Función principal que ejecuta primero el login y luego el inventario"""
@@ -924,23 +833,3 @@ class LoginSystem:
 
 # if __name__ == "__main__":
 #             main()
-def main():
-    """Función principal que ejecuta primero el login y luego el inventario"""
-    
-    # 1. EJECUTAR SISTEMA DE LOGIN
-    login_system = LoginSystem()
-    login_success = login_system.run()
-    
-    # 2. SI EL LOGIN ES EXITOSO, ABRIR INVENTARIO
-    if login_success:
-        user_info = login_system.get_user_info()
-        
-        # Crear ventana para el sistema de inventario
-        root = tk.Tk()
-        app = RestaurantInventorySystem(root)
-        root.mainloop()
-    else:
-        print("Acceso denegado - Login cancelado")
-
-if __name__ == "__main__":
-    main()
