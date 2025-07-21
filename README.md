@@ -77,7 +77,15 @@
 
 <img width="1446" height="3840" alt="Mermaid Chart - Create complex, visual diagrams with text  A smarter way of creating diagrams -2025-07-21-013002" src="https://github.com/user-attachments/assets/36c37419-d2cc-4043-977f-e9350195cbb4" />
 
+-----------
 
+### Estructura general del sistema 
+
+| Clase                       | Rol                                      | Interacción                        |
+| --------------------------- | ---------------------------------------- | ---------------------------------- |
+| `LoginSystem`               | Maneja el login y la autenticación       | Interfaz gráfica de ingreso        |
+| `RestaurantInventorySystem` | Control de inventario (interfaz gráfica) | CRUD, alertas, reportes            |
+| `InventoryAPI`              | Lógica de datos con SQLite               | Métodos programáticos sin interfaz |
 
 
 ------------
