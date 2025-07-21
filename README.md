@@ -203,25 +203,27 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Métodos 
 
-| Método                                     | Descripción                                                          |
-| ------------------------------------------ | -------------------------------------------------------------------- |
-| `__init__(root: Tk)`                       | Inicializa la base de datos, interfaz y carga datos.                 |
-| `setup_db()`                               | Crea la tabla del inventario si no existe.                           |
-| `create_ui()`                              | Construye la interfaz gráfica (botones, entradas, tablas).           |
-| `load_inventory()`                         | Carga los productos de la base de datos y los muestra.               |
-| `filter_items()`                           | Filtra productos por nombre o categoría.                             |
-| `add_product()`                            | Abre formulario para agregar un nuevo producto.                      |
-| `edit_product()`                           | Abre formulario para editar un producto existente.                   |
-| `delete_product()`                         | Elimina un producto seleccionado.                                    |
-| `product_dialog(data)`                     | Crea un formulario para agregar/editar productos.                    |
-| `update_stock()`                           | Permite actualizar la cantidad de un producto.                       |
-| `get_stock_status(cantidad, stock_minimo)` | Retorna “Suficiente”, “Bajo” o “Crítico”.                            |
-| `update_stats()`                           | Actualiza métricas de inventario (valor total, número de productos). |
-| `show_alerts()`                            | Muestra productos con vencimiento cercano o bajo stock.              |
-| `generate_report()`                        | Abre ventana con reporte detallado del inventario.                   |
-| `generate_report_content()`                | Genera el contenido textual del reporte.                             |
-| `save_report(content)`                     | Guarda el reporte como archivo `.txt`.                               |
-| `__del__()`                                | Cierra la conexión a la base de datos.                               |
+| **Método**                                   | **Descripción**                                                                                                                               |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__init__(self, root)`                       | Inicializa la clase con la ventana raíz (`root`). Establece conexión a la base de datos, configura la interfaz gráfica y carga el inventario. |
+| `setup_db(self)`                             | Crea la tabla `inventario` si no existe en la base de datos `inventario_restaurante.db`.                                                      |
+| `crear_interfaz(self)`                       | Diseña visualmente la interfaz gráfica de gestión del inventario usando Tkinter.                                                              |
+| `cargar_datos(self)`                         | Carga los productos existentes desde la base de datos y los muestra en la tabla principal de la interfaz.                                     |
+| `filtrar_items(self)`                        | Filtra y actualiza los productos visibles en la tabla con base en el texto ingresado (nombre o categoría).                                    |
+| `agregar_producto(self)`                     | Abre un formulario para ingresar un nuevo producto al inventario. Inserta en base de datos.                                                   |
+| `editar_producto(self)`                      | Abre un formulario para editar los datos del producto seleccionado en la tabla. Actualiza en la base de datos.                                |
+| `eliminar_producto(self)`                    | Elimina el producto seleccionado en la tabla tanto de la interfaz como de la base de datos.                                                   |
+| `formulario_producto(self, data=None)`       | Crea una ventana emergente reutilizable para agregar o editar un producto. Si recibe `data`, precarga los campos.                             |
+| `actualizar_stock(self)`                     | Permite modificar la cantidad en stock de un producto seleccionado. Valida y guarda cambios en la base de datos.                              |
+| `estado_stock(self, cantidad, stock_minimo)` | Devuelve un texto con el estado del stock: `"Suficiente"`, `"Bajo"` o `"Crítico"`, según la diferencia entre `cantidad` y `stock_minimo`.     |
+| `actualizar_estadisticas(self)`              | Calcula y actualiza en pantalla: número total de productos, valor total del inventario, y cuántos productos tienen stock bajo.                |
+| `alertas_FV(self)`                           | Muestra una ventana con dos pestañas: una con productos de stock bajo y otra con productos que vencen en 15 días o menos.                     |
+| `generar_reporte(self)`                      | Abre una ventana con un informe textual del inventario: resumen, productos críticos, categorías y listado general.                            |
+| `reporte_inventario(self)`                   | Genera el contenido del reporte del inventario como un texto largo, estructurado y completo.                                                  |
+| `reporte_en_txt(self, content)`              | Guarda el contenido del reporte en un archivo `.txt` en el equipo del usuario.                                                                |
+| `__del__(self)`                              | Destructor. Cierra la conexión con la base de datos al eliminar la instancia para liberar recursos.                                           |
+
+
 
 
 
@@ -267,22 +269,22 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 - **`password_var`**: variable de texto vinculada al campo de contraseña.
 
 - **`login_successful`**: indica si el login fue exitoso (`True` o `False`).
+  
+- **`self.user_id, self.username, self.user_role`**: Información del usuario autenticado (ID, nombre y rol).
 
 
 #### Métodos
 
-| Método                         | Descripción                                                                            |
-| ------------------------------ | -------------------------------------------------------------------------------------- |
-| `__init__()`                   | Constructor. Inicializa ventana, base de datos e interfaz de login.                    |
-| `center_window()`              | Centra la ventana en la pantalla.                                                      |
-| `init_user_database()`         | Crea la tabla de usuarios si no existe. Agrega usuarios por defecto (`admin`, `user`). |
-| `hash_password(password: str)` | Devuelve el hash SHA-256 de la contraseña.                                             |
-| `create_login_interface()`     | Construye la interfaz visual del login con campos y botones.                           |
-| `login()`                      | Valida credenciales ingresadas contra la base de datos.                                |
-| `run()`                        | Ejecuta el bucle principal de Tkinter y retorna `True` si el login fue exitoso.        |
-| `get_user_info()`              | Retorna un diccionario con el `id`, `username` y `role` del usuario autenticado.       |
-| `__del__()`                    | Cierra la conexión a la base de datos al destruir el objeto.                           |
-
+| Método                     | Descripción                                                                                                                                            |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `center_window()`          | Centra la ventana del sistema en la pantalla del usuario. Mejora la presentación visual.                                                               |
+| `init_user_database()`     | Crea la base de datos de usuarios (si no existe), define su estructura y añade dos usuarios por defecto: un **administrador** y un **usuario normal**. |
+| `hash_password(password)`  | Cifra la contraseña con `SHA-256` para mayor seguridad al almacenarla.                                                                                 |
+| `create_login_interface()` | Crea la interfaz gráfica del login, incluyendo campos de entrada, títulos, botones y mensajes explicativos sobre usuarios predeterminados.             |
+| `login()`                  | Lógica de autenticación: valida campos, compara credenciales con las de la base de datos y gestiona mensajes y estado del usuario autenticado.         |
+| `run()`                    | Ejecuta el ciclo de eventos (`mainloop()`) de la interfaz y devuelve si el login fue exitoso o no.                                                     |
+| `get_user_info()`          | Devuelve la información del usuario autenticado como un diccionario (`id`, `username`, `role`).                                                        |
+| `__del__()`                | Método destructor: cierra la conexión con la base de datos al finalizar el programa para liberar recursos.                                             |
 
 
 
