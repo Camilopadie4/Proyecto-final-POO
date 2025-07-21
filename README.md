@@ -67,11 +67,43 @@
 
 Para el desarrollo del programa, fueron útile herramientas y librerías disponibles en Python. 
 
-------------
-### Funcionalidades principales
 
 ------------
+
 ### Explicación del código 
+
+### Funcionalidades principales
+
+<img width="1083" height="422" alt="Captura de pantalla 2025-07-20 184901" src="https://github.com/user-attachments/assets/454c6808-f23c-4e3e-abd3-d05009ccc99e" /> 
+
+**Función:**  Es el punto de entrada del sistema. Primero solicita autenticación con LoginSystem. Si las credenciales son válidas, lanza la GUI del inventario.
+
+**Interfaz gráfica del login** 
+
+<img width="487" height="294" alt="Captura de pantalla 2025-07-20 185412" src="https://github.com/user-attachments/assets/1c2b6ea9-1eed-4144-9a9c-ce8c7646d659" />  
+
+**Función:** Este fragmento asegura que la tabla de usuarios exista. Además, crea usuarios por defecto (admin y user) con contraseñas hasheadas.
+
+**Interfaz gráfica del inventario**
+
+<img width="629" height="68" alt="Captura de pantalla 2025-07-20 185844" src="https://github.com/user-attachments/assets/89625a12-8e29-47da-b4e1-f6efa085e28a" /> 
+
+**Función:** Permite visualizar alertas en tiempo real para controlar el inventario. Es una funcionalidad crítica de gestión.
+
+
+**Generación de reportes**
+
+<img width="314" height="55" alt="image" src="https://github.com/user-attachments/assets/ce27f430-95e1-44ca-b954-94baacb613b7" />
+
+**Función:** Este método genera un reporte listo para ser guardado o impreso, mostrando una radiografía completa del estado del inventario.
+
+**Función auxiliar** 
+
+<img width="453" height="80" alt="Captura de pantalla 2025-07-20 190608" src="https://github.com/user-attachments/assets/251509ed-43c5-42e8-a7cb-7447cfc1e99c" />
+
+**Función:** Función usada para proteger contraseñas. Se aplica al registrar o verificar un usuario.
+
+
 
 **Clase LoginSystem**
 
