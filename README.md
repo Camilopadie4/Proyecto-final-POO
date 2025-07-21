@@ -76,11 +76,21 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ------------
 
-### Explicación de métodos y atributos
+## Explicación de métodos y atributos
+
+### main() – Función de Entrada
+<p>Esta función orquesta el flujo del programa:
+
+- Llama al login.
+
+- Si es exitoso, carga la ventana de inventario.
+
+- Si no, termina el programa.
 
 
-#### Clase RestaurantInventorySystem
-Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
+
+### Clase RestaurantInventorySystem
+<p>Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
 #### Atributos 
 
@@ -128,9 +138,9 @@ Clase auxiliar que permite manipular el inventario de forma programática, útil
 **__del__():** Cierra conexión a base de datos al destruir el objeto.
 
 
-#### Clase InventoryAPI
+### Clase InventoryAPI
 
-Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
+<p>Clase auxiliar que permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
 #### Atributos
 
@@ -156,7 +166,7 @@ Clase auxiliar que permite manipular el inventario de forma programática, útil
 
 **close():** Cierra la conexión a la base de datos.
 
-#### LoginSystem
+### LoginSystem
 
 #### Atributos
 
@@ -192,6 +202,7 @@ Clase auxiliar que permite manipular el inventario de forma programática, útil
 **get_user_info()**: Devuelve la información del usuario autenticado (id, nombre, rol).
 
 **__del__():** Cierra la conexión a la base de datos cuando se destruye el objeto.
+
 
 
 
