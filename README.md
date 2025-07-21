@@ -1,4 +1,4 @@
-# Sistema de invenatrio para un restaurante
+# Sistema de inventario para un restaurante
 
 ### Presentación
 
