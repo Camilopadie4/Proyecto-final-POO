@@ -215,7 +215,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 
 
-### Clase RestaurantInventorySystem
+### `Clase RestaurantInventorySystem`
 <p> Esta clase es el núcleo del sistema. Permite manipular el inventario de forma programática, útil para integraciones futuras (API REST, scripts automáticos, etc).
 
 **Funcionalidad:**
