@@ -4,7 +4,7 @@
 
 **Curso:** Programación Orientada a Objetos
 
-**Grupo:** PythUNAL
+**Equipo:** PythUNAL
 
 **Docente:** Felipe Gonzales  Roldan
 
