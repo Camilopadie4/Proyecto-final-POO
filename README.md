@@ -194,14 +194,12 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 | **Librería**       | **Uso** |
 |--------------------|---------|
-| `tkinter`          | Para construir la interfaz gráfica del sistema (ventanas, botones, etiquetas, campos, etc.). |
-| `ttk (Themed Tkinter)` | Para utilizar widgets estilizados como `Treeview`, `Notebook`, `Combobox` y `Frame`. |
 | `sqlite3`          | Para la gestión de la base de datos SQLite, que almacena usuarios, productos e inventario. |
 | `datetime`         | Para registrar fechas y horas, generar reportes con marcas de tiempo y verificar vencimientos. |
 | `timedelta`        | Para calcular diferencias entre fechas (por ejemplo, productos que vencen en 7 días). |
 | `hashlib`          | Para encriptar las contraseñas de los usuarios utilizando el algoritmo SHA-256. |
 | `messagebox`       | Para mostrar mensajes emergentes al usuario (alertas, errores, confirmaciones, etc.). |
-| `simpledialog`     | Para pedir datos sencillos al usuario mediante ventanas emergentes (como actualizar stock). |
+
 
 
 
