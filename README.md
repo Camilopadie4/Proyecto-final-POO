@@ -77,6 +77,7 @@ def login(self):
     username = self.username_var.get().strip()
     password = self.password_var.get().strip()
     hashed_password = self.hash_password(password)
+    
 
     self.cursor.execute('''
         SELECT id, username, role FROM usuarios 
