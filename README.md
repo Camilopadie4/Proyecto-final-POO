@@ -194,11 +194,17 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 #### Atributos 
 
-- **`__init__`**: Constructor que establece conexión con la base de datos SQLite del inventario. Acepta como parámetro opcional la ruta al archivo .db.
+- **`root`**: Constructor que Inicializa la interfaz principal, conecta a la base de datos y carga los productos existentes.
 
 - **`conn`**: conexión a la base de datos `inventario_restaurante.db`.
 
 - **`cursor`**: cursor para ejecutar sentencias SQL.
+  
+- **tabla**: Componente Treeview de Tkinter que muestra los productos en una tabla.
+  
+- **barra_busq**: Variable asociada al campo de búsqueda, permite filtrar en tiempo real.
+  
+- **total_stats**: Diccionario que contiene etiquetas para mostrar estadísticas clave.
 
 
 #### Métodos 
