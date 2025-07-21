@@ -172,7 +172,7 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 
 ------------
 
-## Explicación de métodos y atributos importantes
+## Explicación de métodos atributos del programa
 
 ### main() – Función de Entrada
 <p>Esta función orquesta el flujo del programa:
@@ -182,6 +182,10 @@ Para el desarrollo del programa, fueron útile herramientas y librerías disponi
 - Si es exitoso, carga la ventana de inventario.
 
 - Si no, termina el programa.
+
+<img width="404" height="341" alt="Captura de pantalla 2025-07-21 001849" src="https://github.com/user-attachments/assets/cedc9163-9fc6-40a7-982d-3fee2732d583" />
+
+<p> Cuando se ejecuta con éxito
 
 
 
