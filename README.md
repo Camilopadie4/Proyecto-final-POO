@@ -22,10 +22,11 @@
 ------------
 
 
-
 ### Objetivo general
 
 <p>El objetivo principal del programa es facilitar la administración eficiente de productos almacenados o en bodega, permitiendo llevar un control detallado del stock disponible, el estado de los productos, sus fechas de vencimiento, y otras variables clave para una operación organizada y segura.
+
+-----------
   
 ### Objetivos específicos
 
@@ -40,6 +41,8 @@
 - Aplicar principios de Programación Orientada a Objetos y estructuras modulares para asegurar la mantenibilidad, escalabilidad y reutilización del código.
 
 - Permitir la integración futura con otros sistemas, mediante la creación de una API interna que facilite automatizaciones o comunicación externa.
+
+-----------
 
 ### Justificación 
 <p> Decidimos crear este programa con el ánimo de crear una herramienta útil y sencilla para manejar inventarios de bodegas pequeñas. Notamos que muchos negocios manejan su inventario a mano, lo que genera desorden, desperdicio y pérdidas, por ello, con este proyecto vimos la oportunidad de automatizar esos procesos y hacerlos más eficientes.  
