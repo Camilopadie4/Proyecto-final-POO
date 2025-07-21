@@ -81,6 +81,8 @@
 
 ### Estructura general del sistema 
 
+El sistema está compuesto por 3 clases principales:
+
 | Clase                       | Rol                                      | Interacción                        |
 | --------------------------- | ---------------------------------------- | ---------------------------------- |
 | `LoginSystem`               | Maneja el login y la autenticación       | Interfaz gráfica de ingreso        |
