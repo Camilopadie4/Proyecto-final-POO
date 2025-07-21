@@ -320,6 +320,9 @@ Gestiona el acceso al sistema. Tiene usuarios por defecto (admin y user) y prote
 | `__del__()`                | Método destructor: cierra la conexión con la base de datos al finalizar el programa para liberar recursos.                                             |
 
 ---------
+
+``` def __init__
+root ```
 ### Conclusión 
 
 El flujo de todo el sistema es sencillo pero efectivo:
