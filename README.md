@@ -40,7 +40,7 @@
 
 - Aplicar principios de Programación Orientada a Objetos y estructuras modulares para asegurar la mantenibilidad, escalabilidad y reutilización del código.
 
-- Permitir la integración futura con otros sistemas, mediante la creación de una API interna que facilite automatizaciones o comunicación externa.
+
 
 -----------
 
