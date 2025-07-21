@@ -321,8 +321,6 @@ Gestiona el acceso al sistema. Tiene usuarios por defecto (admin y user) y prote
 
 ---------
 
-``` def __init__
-root ```
 ### Conclusión 
 
 El flujo de todo el sistema es sencillo pero efectivo:
